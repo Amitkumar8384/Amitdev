@@ -38,21 +38,35 @@
   position: relative;
   z-index: 1003;
 
-  font-family: "DM Mono", monospace;
-  font-size: 20px;
-  font-weight: 500;
-
-  letter-spacing: -1px;
-  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
 
   color: var(--text);
+
+  font-family: "DM Mono", monospace;
+  font-size: 21px;
+  font-weight: 700;
+
+  line-height: 1;
+  letter-spacing: -1px;
+
+  white-space: nowrap;
   text-decoration: none;
+
+  transition: opacity 0.25s ease;
 }
 
-.logo span {
+.logo:hover {
+  opacity: 0.85;
+}
+
+.logo-symbol {
+  color: var(--text);
+}
+
+.logo-name {
   color: var(--accent-light);
 }
-
 /* ================================
    DESKTOP NAV
 ================================ */

@@ -63,7 +63,8 @@ function Experience() {
           transition={{ duration: 0.6 }}
         >
           <span className="section-label">
-            05 — EXPERIENCE
+            <span>05</span>
+  <span>EXPERIENCE</span>
           </span>
 
           <h2>

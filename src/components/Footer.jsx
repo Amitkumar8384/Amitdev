@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   FiGithub,
   FiLinkedin,
@@ -6,6 +7,20 @@ import {
 } from "react-icons/fi";
 
 const Footer = () => {
+  const [showBackTop, setShowBackTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackTop(window.scrollY > 500);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -71,15 +86,18 @@ const Footer = () => {
             © {new Date().getFullYear()} AmitDev. All rights reserved.
           </p>
 
-          <button
-            type="button"
-            className="back-top"
-            onClick={scrollToTop}
-            aria-label="Back to top"
-          >
-            <span>Back to top</span>
-            <span className="back-top-arrow">↑</span>
-          </button>
+          {/* Floating Back To Top */}
+          {showBackTop && (
+            <button
+              type="button"
+              className="back-top"
+              onClick={scrollToTop}
+              aria-label="Back to top"
+              title="Back to top"
+            >
+              <span className="back-top-arrow">↑</span>
+            </button>
+          )}
         </div>
       </div>
     </footer>

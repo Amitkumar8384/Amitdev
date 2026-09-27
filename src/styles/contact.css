@@ -13,19 +13,27 @@
 }
 
 /* Section label */
+
 .contact-section .section-label {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 55px;
-  color: var(--accent-light);
+  gap: 12px;
+  margin: 0 0 48px;
+  color: var(--muted);
   font-family: "DM Mono", monospace;
-  font-size: 10px;
-  letter-spacing: 1.5px;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .contact-section .section-label span:first-child {
-  opacity: 0.6;
+  color: var(--accent-light);
+}
+
+.contact-section .section-label span:last-child {
+  color: var(--muted);
 }
 
 /* Main layout */

@@ -45,7 +45,8 @@ function Education() {
           transition={{ duration: 0.6 }}
         >
           <span className="section-label">
-            06 — EDUCATION
+            <span>06</span>
+  <span>EDUCATION</span>
           </span>
 
           <h2>

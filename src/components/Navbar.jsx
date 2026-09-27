@@ -40,9 +40,9 @@ function Navbar({ theme, toggleTheme }) {
           onClick={closeMenu}
           aria-label="AmitDev Home"
         >
-          <span>&lt;</span>
-          Amit<span>Dev</span>
-          <span>/&gt;</span>
+          <span className="logo-symbol">&lt;</span>
+  <span className="logo-name">AmitDev</span>
+  <span className="logo-symbol">/&gt;</span>
         </a>
 
         {/* Navigation */}

@@ -51,8 +51,8 @@ ${form.message}`;
           transition={{ duration: 0.6 }}
         >
           <div className="section-label">
-            <span>07</span>
-            <span>CONTACT</span>
+             <span>07</span>
+  <span>CONTACT</span>
           </div>
         </motion.div>
 
