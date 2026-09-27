@@ -1,16 +1,181 @@
-# React + Vite
+🚀 AmitDev — Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and interactive developer portfolio built to showcase my skills, projects, experience, and journey as a Frontend / Full-Stack Web Developer.
 
-Currently, two official plugins are available:
+🔗 Live Website: https://amitdev-five.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+👨‍💻 About Me
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Hi, I'm Amit Kumar, a Web Developer focused on building modern, responsive, and user-friendly web applications.
 
-## Expanding the ESLint configuration
+I enjoy transforming ideas and designs into functional digital experiences with clean UI, reusable components, and scalable code.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Currently focused on improving my skills in React.js, JavaScript, Node.js, Express.js, MySQL, REST APIs, and modern frontend development.
+
+---
+
+✨ Features
+
+- 🎨 Modern & professional UI
+- 📱 Fully responsive design
+- ⚡ Fast and optimized frontend
+- 🌓 Dark / Light theme
+- 🎬 Smooth animations and transitions
+- 🧩 Interactive sections
+- 💼 Projects showcase
+- 🛠️ Skills & technology section
+- 📚 Education section
+- 📬 Contact section
+- 🔗 Social media integration
+- 📱 Mobile-friendly navigation
+
+---
+
+🛠️ Tech Stack
+
+Frontend
+
+- HTML5
+- CSS3
+- JavaScript
+- React.js
+- Tailwind CSS
+- Framer Motion
+- Vite
+
+Backend
+
+- Node.js
+- Express.js
+- REST APIs
+
+Database
+
+- MySQL
+
+Tools & Platforms
+
+- Git
+- GitHub
+- VS Code
+- Vercel
+- Figma
+- Chrome DevTools
+
+---
+
+📂 Featured Projects
+
+💰 Expense Tracker
+
+A full-stack expense management application for tracking income and expenses.
+
+Tech Stack: React.js, Node.js, Express.js, MySQL, JWT
+
+🔗 Live: https://expense-tracker-lyart-beta-32.vercel.app/
+
+---
+
+🌙 Midnight Journal
+
+A modern journaling application designed to help users write, organize, and track their daily thoughts.
+
+Features:
+
+- Journal entries
+- Mood tracking
+- Streak tracking
+- Calendar
+- Insights
+- LocalStorage
+- Dark / Light mode
+
+Tech Stack: HTML, CSS, JavaScript
+
+---
+
+📚 Vocabulary Vault
+
+An interactive vocabulary learning application designed to help users improve their English vocabulary.
+
+Tech Stack: HTML, CSS, JavaScript, API
+
+---
+
+💱 Currency Converter
+
+A responsive currency conversion application using real-time exchange-rate data.
+
+Tech Stack: React.js, Vite, Tailwind CSS, API
+
+---
+
+📊 GitHub
+
+I regularly work on personal projects and experiments to improve my development skills.
+
+🔗 GitHub: https://github.com/amitkumar8384
+
+---
+
+🎯 Current Focus
+
+Currently focusing on:
+
+- Advanced JavaScript
+- React.js
+- React Hooks
+- REST APIs
+- Node.js
+- Express.js
+- MySQL
+- Authentication & Authorization
+- Backend Security
+- Full-Stack Development
+- AWS & Cloud Fundamentals
+
+---
+
+📈 My Development Journey
+
+HTML
+  ↓
+CSS
+  ↓
+JavaScript
+  ↓
+React.js
+  ↓
+Node.js
+  ↓
+Express.js
+  ↓
+MySQL
+  ↓
+REST APIs
+  ↓
+Full-Stack Development
+
+---
+
+📬 Contact
+
+I'm open to opportunities, collaborations, and interesting web development projects.
+
+- 🌐 Portfolio: https://amitdev-five.vercel.app/
+- 💻 GitHub: https://github.com/amitkumar8384
+- 💼 LinkedIn: https://www.linkedin.com/
+
+---
+
+⭐ Support
+
+If you find this portfolio useful or interesting, consider giving the repository a ⭐ on GitHub.
+
+---
+
+Built with ❤️ by Amit Kumar
+
+AmitDev — Building modern web experiences.
