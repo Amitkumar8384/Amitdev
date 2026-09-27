@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   FiGithub,
   FiLinkedin,
@@ -24,16 +24,70 @@ const LINKEDIN_URL = "https://www.linkedin.com/in/amit-kumar8384/";
 
 function Navbar({ theme, toggleTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("#home");
 
   const closeMenu = () => {
     setMenuOpen(false);
   };
 
+  /* ================================
+     ACTIVE SECTION + SCROLL
+  ================================= */
+
+  useEffect(() => {
+    const sections = navLinks
+      .map((link) => document.querySelector(link.href))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSections = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort(
+            (a, b) =>
+              b.intersectionRatio - a.intersectionRatio
+          );
+
+        if (visibleSections.length > 0) {
+          setActiveSection(
+            `#${visibleSections[0].target.id}`
+          );
+        }
+      },
+      {
+        rootMargin: "-25% 0px -60% 0px",
+        threshold: [0, 0.2, 0.5, 1],
+      }
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    /* Close mobile menu when scrolling */
+
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <header className="navbar">
       <div className="container nav-container">
 
-        {/* Logo */}
+        {/* ================================
+            LOGO
+        ================================= */}
+
         <a
           href="#home"
           className="logo"
@@ -41,27 +95,41 @@ function Navbar({ theme, toggleTheme }) {
           aria-label="AmitDev Home"
         >
           <span className="logo-symbol">&lt;</span>
-  <span className="logo-name">AmitDev</span>
-  <span className="logo-symbol">/&gt;</span>
+          <span className="logo-name">AmitDev</span>
+          <span className="logo-symbol">/&gt;</span>
         </a>
 
-        {/* Navigation */}
+        {/* ================================
+            NAVIGATION
+        ================================= */}
+
         <nav
-          className={`nav-links ${menuOpen ? "active" : ""}`}
+          className={`nav-links ${
+            menuOpen ? "active" : ""
+          }`}
           aria-label="Main navigation"
         >
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
+              className={
+                activeSection === link.href
+                  ? "active"
+                  : ""
+              }
               onClick={closeMenu}
             >
               {link.name}
             </a>
           ))}
 
-          {/* Mobile Social Links */}
+          {/* ================================
+              MOBILE SOCIALS
+          ================================= */}
+
           <div className="mobile-socials">
+
             <a
               href={GITHUB_URL}
               target="_blank"
@@ -81,13 +149,18 @@ function Navbar({ theme, toggleTheme }) {
             >
               <FiLinkedin />
             </a>
+
           </div>
         </nav>
 
-        {/* Right Actions */}
+        {/* ================================
+            RIGHT ACTIONS
+        ================================= */}
+
         <div className="nav-actions">
 
-          {/* Theme */}
+          {/* Theme Toggle */}
+
           <button
             type="button"
             className="theme-toggle"
@@ -103,10 +176,15 @@ function Navbar({ theme, toggleTheme }) {
                 : "Switch to Dark Mode"
             }
           >
-            {theme === "dark" ? <FiSun /> : <FiMoon />}
+            {theme === "dark" ? (
+              <FiSun />
+            ) : (
+              <FiMoon />
+            )}
           </button>
 
           {/* GitHub */}
+
           <a
             href={GITHUB_URL}
             target="_blank"
@@ -119,6 +197,7 @@ function Navbar({ theme, toggleTheme }) {
           </a>
 
           {/* LinkedIn */}
+
           <a
             href={LINKEDIN_URL}
             target="_blank"
@@ -130,7 +209,8 @@ function Navbar({ theme, toggleTheme }) {
             <FiLinkedin />
           </a>
 
-          {/* Contact */}
+          {/* Let's Talk */}
+
           <a
             href="#contact"
             className="nav-contact"
@@ -139,11 +219,16 @@ function Navbar({ theme, toggleTheme }) {
             Let's Talk
           </a>
 
-          {/* Mobile Menu */}
+          {/* ================================
+              MOBILE MENU BUTTON
+          ================================= */}
+
           <button
             type="button"
             className="menu-btn"
-            onClick={() => setMenuOpen((prev) => !prev)}
+            onClick={() =>
+              setMenuOpen((prev) => !prev)
+            }
             aria-label={
               menuOpen
                 ? "Close navigation menu"
