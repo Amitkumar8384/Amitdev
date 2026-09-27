@@ -1,0 +1,604 @@
+/* =========================================================
+   EDUCATION SECTION
+========================================================= */
+
+.education-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  min-height: auto;
+
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+/* subtle background glow */
+
+.education-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  top: 80px;
+  right: -280px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  opacity: 0.025;
+
+  filter: blur(110px);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.education-section .section-heading {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+
+  margin: 0 0 70px;
+
+  text-align: left;
+}
+
+.education-section .section-label {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 0 0 48px;
+
+  color: var(--muted);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+  font-weight: 400;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.education-section .section-label::first-letter {
+  color: var(--accent-light);
+}
+
+.education-section .section-heading h2 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: clamp(52px, 5.5vw, 76px);
+
+  font-weight: 700;
+
+  line-height: 0.96;
+
+  letter-spacing: -4px;
+}
+
+.education-section .section-heading h2 span {
+  color: var(--muted);
+}
+
+.education-section .section-heading p {
+  max-width: 600px;
+
+  margin: 26px 0 0;
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  line-height: 1.8;
+}
+
+/* =========================================================
+   EDUCATION LIST
+========================================================= */
+
+.education-list {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+/* =========================================================
+   EDUCATION CARD
+========================================================= */
+
+.education-card {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 42px 52px minmax(0, 1fr) auto;
+
+  align-items: center;
+
+  gap: 22px;
+
+  width: 100%;
+
+  padding: 26px 28px;
+
+  box-sizing: border-box;
+
+  border: 1px solid var(--border);
+
+  border-radius: 18px;
+
+  background: var(--card);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+/* top highlight */
+
+.education-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 28px;
+  right: 28px;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-light),
+    transparent
+  );
+
+  opacity: 0.25;
+}
+
+/* hover glow */
+
+.education-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  top: -100px;
+  right: -70px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  opacity: 0;
+
+  filter: blur(65px);
+
+  pointer-events: none;
+
+  transition: opacity 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-4px);
+
+  border-color: var(--border-hover);
+
+  box-shadow:
+    0 18px 45px var(--shadow);
+}
+
+.education-card:hover::after {
+  opacity: 0.08;
+}
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.education-number {
+  color: var(--accent-light);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.education-icon {
+  position: relative;
+
+  width: 52px;
+  height: 52px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  color: var(--accent-light);
+
+  background: var(--bg-soft);
+
+  font-size: 20px;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.education-icon::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 6px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 9px;
+
+  opacity: 0.45;
+}
+
+.education-card:hover .education-icon {
+  transform: translateY(-2px);
+
+  border-color: var(--border-hover);
+
+  box-shadow:
+    0 8px 25px var(--shadow);
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.education-content {
+  position: relative;
+  z-index: 2;
+
+  min-width: 0;
+}
+
+/* =========================================================
+   TOP ROW
+========================================================= */
+
+.education-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 7px;
+}
+
+.education-type {
+  color: var(--accent-light);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.9px;
+
+  text-transform: uppercase;
+}
+
+.education-date {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: var(--muted);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+
+  white-space: nowrap;
+}
+
+.education-date svg {
+  width: 11px;
+  height: 11px;
+
+  color: var(--accent-light);
+}
+
+/* =========================================================
+   DEGREE
+========================================================= */
+
+.education-content h3 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: 22px;
+
+  font-weight: 600;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.5px;
+}
+
+/* =========================================================
+   SHORT LABEL
+========================================================= */
+
+.education-short {
+  display: inline-block;
+
+  margin: 7px 0 0;
+
+  color: var(--muted);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 0.5px;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   INSTITUTE
+========================================================= */
+
+.education-institute {
+  display: block;
+
+  margin-top: 7px;
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  font-weight: 500;
+}
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.education-arrow {
+  position: relative;
+  z-index: 2;
+
+  width: 17px;
+  height: 17px;
+
+  color: var(--muted-2);
+
+  opacity: 0;
+
+  transform: translate(-4px, 4px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.education-card:hover .education-arrow {
+  opacity: 1;
+
+  color: var(--accent-light);
+
+  transform: translate(0, 0);
+}
+
+/* =========================================================
+   PRIMARY DEGREE
+========================================================= */
+
+.education-primary {
+  border-color: var(--border-hover);
+}
+
+.education-primary .education-icon {
+  border-color: var(--border-hover);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .education-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .education-card {
+    grid-template-columns: 35px 50px minmax(0, 1fr) auto;
+
+    gap: 18px;
+
+    padding: 24px;
+  }
+
+  .education-content h3 {
+    font-size: 20px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .education-section {
+    padding-top: 85px;
+    padding-bottom: 85px;
+  }
+
+  .education-section .section-heading {
+    margin-bottom: 55px;
+
+    text-align: left;
+  }
+
+  .education-section .section-label {
+    margin-bottom: 38px;
+  }
+
+  .education-section .section-heading h2 {
+    font-size: 52px;
+
+    letter-spacing: -3px;
+  }
+
+  .education-section .section-heading p {
+    font-size: 11px;
+  }
+
+  .education-card {
+    grid-template-columns: 42px minmax(0, 1fr) auto;
+
+    gap: 16px;
+
+    padding: 22px;
+
+    border-radius: 16px;
+  }
+
+  .education-number {
+    align-self: flex-start;
+
+    padding-top: 5px;
+  }
+
+  .education-icon {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 12px;
+
+    font-size: 18px;
+  }
+
+  .education-top {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 7px;
+  }
+
+  .education-content h3 {
+    font-size: 19px;
+  }
+
+  .education-arrow {
+    align-self: center;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+  .education-section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .education-section .section-heading h2 {
+    font-size: 45px;
+
+    letter-spacing: -2.5px;
+  }
+
+  .education-card {
+    grid-template-columns: 34px minmax(0, 1fr);
+
+    gap: 14px;
+
+    padding: 20px;
+  }
+
+  .education-icon {
+    width: 42px;
+    height: 42px;
+
+    font-size: 17px;
+  }
+
+  .education-number {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .education-icon {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .education-content {
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    padding-top: 5px;
+  }
+
+  .education-arrow {
+    display: none;
+  }
+
+  .education-content h3 {
+    font-size: 18px;
+  }
+
+  .education-institute {
+    font-size: 11px;
+  }
+}

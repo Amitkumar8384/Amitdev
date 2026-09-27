@@ -1,0 +1,341 @@
+/* ================================
+   FOOTER
+================================ */
+
+.footer {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+  padding: 70px 0 28px;
+
+  border-top: 1px solid var(--border);
+
+  background: var(--bg);
+
+  overflow: hidden;
+}
+
+/* Subtle background glow */
+
+.footer::before {
+  content: "";
+
+  position: absolute;
+  width: 360px;
+  height: 360px;
+
+  left: -260px;
+  bottom: -220px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+  opacity: 0.02;
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+/* ================================
+   TOP
+================================ */
+
+.footer-top {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 60px;
+}
+
+/* ================================
+   BRAND
+================================ */
+
+.footer-brand {
+  max-width: 430px;
+}
+
+.footer-logo {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  color: var(--text);
+
+  font-family: "DM Mono", monospace;
+  font-size: 22px;
+  font-weight: 700;
+
+  line-height: 1;
+  letter-spacing: -0.5px;
+
+  text-decoration: none;
+
+  transition: opacity 0.25s ease;
+}
+
+.footer-logo:hover {
+  opacity: 0.8;
+}
+
+.footer-logo span {
+  color: var(--accent-light);
+}
+
+.footer-brand p {
+  max-width: 380px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* ================================
+   SOCIAL LINKS
+================================ */
+
+.footer-socials {
+  display: flex;
+  flex-direction: column;
+
+  width: 210px;
+  min-width: 190px;
+}
+
+.footer-socials a {
+  display: grid;
+  grid-template-columns: 20px 1fr auto;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 13px 0;
+
+  border-bottom: 1px solid var(--border);
+
+  color: var(--muted);
+
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    padding-left 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.footer-socials a:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.footer-socials a:hover {
+  padding-left: 5px;
+  color: var(--text);
+  border-color: var(--border-hover);
+}
+
+.footer-socials a svg:first-child {
+  color: var(--accent-light);
+  font-size: 14px;
+}
+
+.footer-socials a svg:last-child {
+  font-size: 12px;
+  opacity: 0.6;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.footer-socials a:hover svg:last-child {
+  transform: translate(2px, -2px);
+  opacity: 1;
+}
+
+/* ================================
+   DIVIDER
+================================ */
+
+.footer-line {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  height: 1px;
+
+  margin: 55px 0 22px;
+
+  background: var(--border);
+}
+
+/* ================================
+   BOTTOM
+================================ */
+
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.footer-bottom p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.4px;
+}
+
+/* ================================
+   BACK TO TOP
+================================ */
+
+.back-top {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 8px 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--muted);
+
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+
+  cursor: pointer;
+
+  transition: color 0.25s ease;
+}
+
+.back-top:hover {
+  color: var(--text);
+}
+
+.back-top-arrow {
+  display: grid;
+  place-items: center;
+
+  width: 25px;
+  height: 25px;
+
+  box-sizing: border-box;
+
+  border: 1px solid var(--border);
+  border-radius: 6px;
+
+  font-size: 12px;
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.back-top:hover .back-top-arrow {
+  border-color: var(--border-hover);
+  background: var(--bg-soft);
+
+  transform: translateY(-2px);
+}
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 700px) {
+  .footer {
+    padding-top: 55px;
+    padding-bottom: 25px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+
+  .footer-brand p {
+    max-width: 450px;
+  }
+
+  .footer-socials {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 15px;
+  }
+}
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 450px) {
+  .footer {
+    padding-top: 50px;
+    padding-bottom: 22px;
+  }
+
+  .footer-top {
+    gap: 35px;
+  }
+
+  .footer-logo {
+    font-size: 20px;
+  }
+
+  .footer-brand p {
+    font-size: 11px;
+    line-height: 1.75;
+  }
+
+  .footer-socials a {
+    padding: 12px 0;
+    font-size: 9px;
+  }
+
+  .footer-line {
+    margin: 45px 0 20px;
+  }
+
+  .footer-bottom p {
+    font-size: 7.5px;
+    line-height: 1.5;
+  }
+
+  .back-top {
+    font-size: 8px;
+  }
+}
