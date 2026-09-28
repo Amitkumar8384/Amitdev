@@ -8,16 +8,38 @@ import {
 
 const Footer = () => {
   const [showBackTop, setShowBackTop] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowBackTop(window.scrollY > 500);
+      const scrollTop = window.scrollY;
+
+      const documentHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+      const progress =
+        documentHeight > 0
+          ? (scrollTop / documentHeight) * 100
+          : 0;
+
+      setScrollProgress(
+        Math.min(Math.max(Math.round(progress), 0), 100)
+      );
+
+      setShowBackTop(scrollTop > 500);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    window.addEventListener("resize", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
     };
   }, []);
 
@@ -27,6 +49,10 @@ const Footer = () => {
       behavior: "smooth",
     });
   };
+
+  const circumference = 2 * Math.PI * 24;
+  const dashOffset =
+    circumference - (scrollProgress / 100) * circumference;
 
   return (
     <footer className="footer">
@@ -86,16 +112,46 @@ const Footer = () => {
             © {new Date().getFullYear()} AmitDev. All rights reserved.
           </p>
 
-          {/* Floating Back To Top */}
+          {/* Apple-style Glass Back To Top */}
           {showBackTop && (
             <button
               type="button"
               className="back-top"
               onClick={scrollToTop}
-              aria-label="Back to top"
-              title="Back to top"
+              aria-label={`Back to top. ${scrollProgress}% scrolled`}
+              title={`Back to top — ${scrollProgress}%`}
             >
-              <span className="back-top-arrow">↑</span>
+              <svg
+                className="back-top-ring"
+                viewBox="0 0 56 56"
+                aria-hidden="true"
+              >
+                {/* Background Ring */}
+                <circle
+                  className="back-top-ring-bg"
+                  cx="28"
+                  cy="28"
+                  r="24"
+                />
+
+                {/* Progress Ring */}
+                <circle
+                  className="back-top-ring-progress"
+                  cx="28"
+                  cy="28"
+                  r="24"
+                  strokeDasharray={circumference}
+                  strokeDashoffset={dashOffset}
+                />
+              </svg>
+
+              <span className="back-top-content">
+                <span className="back-top-arrow">↑</span>
+
+                <span className="back-top-percent">
+                  {scrollProgress}%
+                </span>
+              </span>
             </button>
           )}
         </div>
