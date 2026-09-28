@@ -891,6 +891,11 @@
 }
 
 /* =========================================
+   LIGHT THEME — MOBILE ONLY
+========================================= */
+
+@media (max-width: 900px) {
+/* =========================================
    LIGHT THEME
 ========================================= */
 
@@ -986,6 +991,7 @@
   box-shadow:
     inset 0 1px 1px rgba(255, 255, 255, 0.8);
 }
+}
 
 /* =========================================
    REDUCE MOTION
@@ -1012,4 +1018,36 @@
 .back-top {
   position: fixed;
   z-index: 1101 !important;
+}
+
+/* =========================================
+   DESKTOP NAV — CLEAN / NO BOX
+========================================= */
+
+@media (min-width: 901px) {
+  .nav-links,
+  .nav-links a,
+  .nav-links a:hover,
+  .nav-links a:active,
+  .nav-links a:focus,
+  .nav-links a:focus-visible,
+  .nav-links a.active {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  .nav-links a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .nav-links a::before {
+    display: none !important;
+  }
+}
+
+.nav-links a {
+  -webkit-tap-highlight-color: transparent;
 }
