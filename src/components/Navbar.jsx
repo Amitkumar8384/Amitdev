@@ -81,7 +81,13 @@ function Navbar({ theme, toggleTheme }) {
   }, []);
 
   return (
-    <header className="navbar">
+   <header
+    className="navbar"
+    style={{
+      backdropFilter: "blur(22px) saturate(150%)",
+      WebkitBackdropFilter: "blur(22px) saturate(150%)",
+    }}
+  >
       <div className="container nav-container">
 
         {/* ================================
