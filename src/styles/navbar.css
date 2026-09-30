@@ -1269,3 +1269,48 @@
     isolation: auto !important;
   }
 }
+/* =========================================================
+   FINAL VERCEL NAVBAR BLUR
+========================================================= */
+
+.navbar {
+  background: rgba(10, 10, 15, 0.42) !important;
+
+  backdrop-filter: blur(22px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(140%) !important;
+
+  isolation: auto !important;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    background: rgba(10, 10, 15, 0.42) !important;
+
+    backdrop-filter: blur(22px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(22px) saturate(150%) !important;
+
+    isolation: auto !important;
+  }
+}
+
+[data-theme="light"] .navbar {
+  background: rgba(255, 255, 255, 0.55) !important;
+
+  backdrop-filter: blur(22px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(140%) !important;
+
+  isolation: auto !important;
+}
+
+@media (max-width: 900px) {
+  [data-theme="light"] .navbar {
+    background: rgba(255, 255, 255, 0.55) !important;
+
+    backdrop-filter: blur(22px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(22px) saturate(150%) !important;
+
+    isolation: auto !important;
+  }
+}
