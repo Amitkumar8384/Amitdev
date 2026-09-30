@@ -4,6 +4,7 @@
 
 .navbar {
   position: fixed;
+
   top: 0;
   left: 0;
 
@@ -12,15 +13,30 @@
 
   z-index: 1000;
 
-  background: var(--navbar-bg);
+  /*
+    IMPORTANT:
+    Use transparent RGBA instead of an opaque
+    CSS variable so backdrop blur works reliably
+    after Vercel production build.
+  */
+  background: rgba(10, 10, 15, 0.58);
 
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
 
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.10);
 
   isolation: isolate;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
+
 
 /* =========================================
    NAV CONTAINER
@@ -36,6 +52,7 @@
   align-items: center;
   justify-content: space-between;
 }
+
 
 /* =========================================
    LOGO
@@ -78,6 +95,7 @@
   color: var(--accent-light);
 }
 
+
 /* =========================================
    DESKTOP NAV
 ========================================= */
@@ -100,6 +118,7 @@
     color 0.25s ease,
     transform 0.25s ease;
 }
+
 
 /* Desktop underline */
 
@@ -130,6 +149,7 @@
   width: 100%;
 }
 
+
 /* Active */
 
 .nav-links a.active {
@@ -139,6 +159,7 @@
 .nav-links a.active::after {
   width: 100%;
 }
+
 
 /* =========================================
    RIGHT ACTIONS
@@ -153,6 +174,7 @@
 
   gap: 10px;
 }
+
 
 /* =========================================
    ICON BUTTONS
@@ -207,6 +229,7 @@
   transform: translateY(-2px) rotate(8deg);
 }
 
+
 /* =========================================
    LET'S TALK
 ========================================= */
@@ -236,6 +259,7 @@
   box-shadow:
     0 8px 25px var(--shadow);
 }
+
 
 /* =========================================
    MOBILE MENU BUTTON
@@ -281,6 +305,7 @@
   transform: scale(0.94);
 }
 
+
 /* =========================================
    MOBILE SOCIALS
 ========================================= */
@@ -289,14 +314,37 @@
   display: none;
 }
 
+
 /* =========================================
    TABLET / MOBILE
 ========================================= */
 
 @media (max-width: 900px) {
+
   .nav-container {
     height: 72px;
   }
+
+
+  /* =======================================
+     MOBILE NAVBAR GLASS
+  ======================================= */
+
+  .navbar {
+    background: rgba(10, 10, 15, 0.52);
+
+    backdrop-filter:
+      blur(22px)
+      saturate(150%);
+
+    -webkit-backdrop-filter:
+      blur(22px)
+      saturate(150%);
+
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.08);
+  }
+
 
   /* =======================================
      PAGE BACKGROUND BLUR
@@ -330,8 +378,9 @@
       0.3s ease forwards;
   }
 
+
   /* =======================================
-     NAVBAR ABOVE BLUR
+     NAVBAR ABOVE PAGE BLUR
   ======================================= */
 
   .navbar {
@@ -346,6 +395,7 @@
   .nav-actions {
     z-index: 1005;
   }
+
 
   /* =======================================
      MOBILE NAV PANEL
@@ -378,6 +428,7 @@
     /*
       Apple-style transparent glass
     */
+
     background:
       linear-gradient(
         145deg,
@@ -419,6 +470,7 @@
       transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
+
   /* =======================================
      GLASS TOP REFLECTION
   ======================================= */
@@ -444,6 +496,7 @@
 
     pointer-events: none;
   }
+
 
   /* =======================================
      GLASS AMBIENT GLOW
@@ -472,6 +525,7 @@
     pointer-events: none;
   }
 
+
   /* =======================================
      OPEN MENU
   ======================================= */
@@ -491,6 +545,7 @@
       mobileMenuIn
       0.35s cubic-bezier(0.22, 1, 0.36, 1);
   }
+
 
   /* =======================================
      MOBILE LINKS
@@ -528,6 +583,7 @@
       box-shadow 0.25s ease;
   }
 
+
   /* Remove desktop underline */
 
   .nav-links a::after {
@@ -542,6 +598,7 @@
 
     transform: translateX(2px);
   }
+
 
   /* =======================================
      ACTIVE LINK
@@ -565,6 +622,7 @@
       0 4px 16px rgba(139, 108, 255, 0.045);
   }
 
+
   /* Active purple indicator */
 
   .nav-links a.active::before {
@@ -585,6 +643,7 @@
       0 0 10px rgba(173, 154, 255, 0.55),
       0 0 18px rgba(139, 108, 255, 0.18);
   }
+
 
   /* =======================================
      MOBILE SOCIALS
@@ -649,6 +708,7 @@
       0 5px 15px rgba(139, 108, 255, 0.08);
   }
 
+
   /* =======================================
      RIGHT ACTIONS
   ======================================= */
@@ -664,6 +724,7 @@
   .nav-contact {
     display: none;
   }
+
 
   /* =======================================
      THEME BUTTON
@@ -685,6 +746,7 @@
     box-shadow:
       inset 0 1px 1px rgba(255, 255, 255, 0.04);
   }
+
 
   /* =======================================
      MENU BUTTON
@@ -720,6 +782,7 @@
   }
 }
 
+
 /* =========================================
    MENU ANIMATION
 ========================================= */
@@ -742,6 +805,7 @@
   }
 }
 
+
 /* =========================================
    BACKGROUND BLUR ANIMATION
 ========================================= */
@@ -756,6 +820,7 @@
   }
 }
 
+
 /* =========================================
    WHATSAPP + BACK TO TOP
    ALWAYS ABOVE BACKGROUND BLUR
@@ -769,11 +834,13 @@
   z-index: 1101 !important;
 }
 
+
 /* =========================================
    MOBILE 600
 ========================================= */
 
 @media (max-width: 600px) {
+
   .nav-container {
     height: 68px;
   }
@@ -791,6 +858,7 @@
 
     padding: 12px;
   }
+
 
   /* Mobile menu scrollbar */
 
@@ -847,11 +915,13 @@
   }
 }
 
+
 /* =========================================
    SMALL MOBILE
 ========================================= */
 
 @media (max-width: 400px) {
+
   .nav-container {
     height: 64px;
   }
@@ -890,141 +960,149 @@
   }
 }
 
-/* =========================================
-   LIGHT THEME — MOBILE ONLY
-========================================= */
 
-@media (max-width: 900px) {
 /* =========================================
    LIGHT THEME
 ========================================= */
 
-[data-theme="light"] .nav-links {
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.82),
-      rgba(247, 248, 250, 0.68)
-    );
+[data-theme="light"] .navbar {
+  background: rgba(255, 255, 255, 0.62);
 
-  border-color:
-    rgba(0, 0, 0, 0.09);
+  border-bottom:
+    1px solid rgba(0, 0, 0, 0.08);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.06);
 
   backdrop-filter:
-    blur(32px)
-    saturate(160%)
-    brightness(1.05);
+    blur(18px)
+    saturate(140%);
 
   -webkit-backdrop-filter:
-    blur(32px)
-    saturate(160%)
-    brightness(1.05);
-
-  box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.14),
-    0 10px 35px rgba(0, 0, 0, 0.08),
-    inset 0 1px 1px rgba(255, 255, 255, 0.9);
+    blur(18px)
+    saturate(140%);
 }
 
-[data-theme="light"] .nav-links::before {
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.9),
-      transparent
-    );
-}
-
-[data-theme="light"] .nav-links::after {
-  background:
-    rgba(109, 82, 232, 0.06);
-}
-
-[data-theme="light"] .nav-links a:hover {
-  background:
-    rgba(0, 0, 0, 0.035);
-}
-
-[data-theme="light"] .nav-links a.active {
-  background:
-    linear-gradient(
-      90deg,
-      rgba(109, 82, 232, 0.12),
-      rgba(109, 82, 232, 0.04)
-    );
-
-  box-shadow:
-    inset 0 0 0 1px rgba(109, 82, 232, 0.08),
-    inset 0 1px 1px rgba(255, 255, 255, 0.65);
-}
-
-[data-theme="light"] .mobile-socials {
-  border-color:
-    rgba(0, 0, 0, 0.07);
-}
-
-[data-theme="light"] .mobile-socials a {
-  border-color:
-    rgba(0, 0, 0, 0.08);
-
-  background:
-    rgba(0, 0, 0, 0.02);
-}
-
-[data-theme="light"] .mobile-socials a:hover {
-  background:
-    rgba(109, 82, 232, 0.06);
-
-  border-color:
-    rgba(109, 82, 232, 0.18);
-}
-
-[data-theme="light"] .menu-btn,
-[data-theme="light"] .theme-toggle {
-  border-color:
-    rgba(0, 0, 0, 0.09);
-
-  background:
-    rgba(255, 255, 255, 0.28);
-
-  box-shadow:
-    inset 0 1px 1px rgba(255, 255, 255, 0.8);
-}
-}
 
 /* =========================================
-   REDUCE MOTION
+   LIGHT THEME — MOBILE
 ========================================= */
 
-@media (prefers-reduced-motion: reduce) {
-  .nav-links,
-  .nav-links.active,
-  body:has(.nav-links.active)::before {
-    animation: none;
-    transition: none;
+@media (max-width: 900px) {
+
+  [data-theme="light"] .navbar {
+    background: rgba(255, 255, 255, 0.58);
+
+    backdrop-filter:
+      blur(22px)
+      saturate(150%);
+
+    -webkit-backdrop-filter:
+      blur(22px)
+      saturate(150%);
+  }
+
+  [data-theme="light"] .nav-links {
+    background:
+      linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.82),
+        rgba(247, 248, 250, 0.68)
+      );
+
+    border-color:
+      rgba(0, 0, 0, 0.09);
+
+    backdrop-filter:
+      blur(32px)
+      saturate(160%)
+      brightness(1.05);
+
+    -webkit-backdrop-filter:
+      blur(32px)
+      saturate(160%)
+      brightness(1.05);
+
+    box-shadow:
+      0 30px 80px rgba(0, 0, 0, 0.14),
+      0 10px 35px rgba(0, 0, 0, 0.08),
+      inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  }
+
+  [data-theme="light"] .nav-links::before {
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.9),
+        transparent
+      );
+  }
+
+  [data-theme="light"] .nav-links::after {
+    background:
+      rgba(109, 82, 232, 0.06);
+  }
+
+  [data-theme="light"] .nav-links a:hover {
+    background:
+      rgba(0, 0, 0, 0.035);
+  }
+
+  [data-theme="light"] .nav-links a.active {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(109, 82, 232, 0.12),
+        rgba(109, 82, 232, 0.04)
+      );
+
+    box-shadow:
+      inset 0 0 0 1px rgba(109, 82, 232, 0.08),
+      inset 0 1px 1px rgba(255, 255, 255, 0.65);
+  }
+
+  [data-theme="light"] .mobile-socials {
+    border-color:
+      rgba(0, 0, 0, 0.07);
+  }
+
+  [data-theme="light"] .mobile-socials a {
+    border-color:
+      rgba(0, 0, 0, 0.08);
+
+    background:
+      rgba(0, 0, 0, 0.02);
+  }
+
+  [data-theme="light"] .mobile-socials a:hover {
+    background:
+      rgba(109, 82, 232, 0.06);
+
+    border-color:
+      rgba(109, 82, 232, 0.18);
+  }
+
+  [data-theme="light"] .menu-btn,
+  [data-theme="light"] .theme-toggle {
+    border-color:
+      rgba(0, 0, 0, 0.09);
+
+    background:
+      rgba(255, 255, 255, 0.28);
+
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.8);
   }
 }
-/* =========================================
-   FLOATING BUTTONS — ALWAYS VISIBLE
-   ABOVE MOBILE BACKGROUND BLUR
-========================================= */
 
-.whatsapp-float {
-  position: fixed;
-  z-index: 1100 !important;
-}
-
-.back-top {
-  position: fixed;
-  z-index: 1101 !important;
-}
 
 /* =========================================
    DESKTOP NAV — CLEAN / NO BOX
 ========================================= */
 
 @media (min-width: 901px) {
+
   .nav-links,
   .nav-links a,
   .nav-links a:hover,
@@ -1033,9 +1111,13 @@
   .nav-links a:focus-visible,
   .nav-links a.active {
     background: transparent !important;
+
     background-color: transparent !important;
+
     border: 0 !important;
+
     box-shadow: none !important;
+
     outline: none !important;
   }
 
@@ -1048,6 +1130,45 @@
   }
 }
 
+
+/* =========================================
+   TAP HIGHLIGHT
+========================================= */
+
 .nav-links a {
   -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================
+   REDUCE MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .nav-links,
+  .nav-links.active,
+  body:has(.nav-links.active)::before {
+    animation: none;
+
+    transition: none;
+  }
+}
+
+
+/* =========================================
+   FLOATING BUTTONS
+   ALWAYS ABOVE MOBILE BACKGROUND BLUR
+========================================= */
+
+.whatsapp-float {
+  position: fixed;
+
+  z-index: 1100 !important;
+}
+
+.back-top {
+  position: fixed;
+
+  z-index: 1101 !important;
 }
