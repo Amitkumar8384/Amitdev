@@ -4,7 +4,7 @@ import {
   SiHtml5,
   SiJavascript,
   SiReact,
-  SiAngular,
+  SiTailwindcss,
   SiBootstrap,
   SiPython,
   SiNodedotjs,
@@ -40,8 +40,8 @@ const skillGroups = [
         icon: SiReact,
       },
       {
-        name: "Angular",
-        icon: SiAngular,
+        name: "Tailwind CSS",
+        icon: SiTailwindcss,
       },
       {
         name: "Bootstrap",
@@ -171,9 +171,7 @@ function Skills() {
                   <div>
                     <h3>{group.title}</h3>
 
-                    <p>
-                      {group.description}
-                    </p>
+                    <p>{group.description}</p>
                   </div>
                 </div>
 
@@ -214,9 +212,7 @@ function Skills() {
                       <div className="skill-info">
                         <h4>{skill.name}</h4>
 
-                        <span>
-                          {group.title}
-                        </span>
+                        <span>{group.title}</span>
                       </div>
 
                       <span className="skill-arrow">
@@ -246,7 +242,7 @@ function Skills() {
           </span>
 
           <strong>
-            React · JavaScript · Responsive UI
+            React · JavaScript · Node.js
           </strong>
         </motion.div>
 

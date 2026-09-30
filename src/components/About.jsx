@@ -86,15 +86,12 @@ function About() {
             </h3>
 
             <p>
-              My experience includes working with JavaScript,
-              Angular, React and responsive web technologies to
-              create practical web interfaces and applications.
+              I work with JavaScript, React, Node.js, Express.js and MySQL to build practical,
+               responsive web applications.
             </p>
 
             <p>
-              I focus on clean structure, responsive layouts,
-              API integration and creating interfaces that are
-              simple to understand and enjoyable to use.
+              I focus on clean code, API integration, responsive design and user-friendly experiences, with an emphasis on building applications that are reliable, maintainable and easy to use.
             </p>
 
             <a
@@ -159,8 +156,8 @@ function About() {
           </div>
 
           <div className="about-stat">
-            <strong>Angular</strong>
-            <span>Framework</span>
+            <strong>MySQL</strong>
+            <span>Database</span>
           </div>
 
           <div className="about-stat">
