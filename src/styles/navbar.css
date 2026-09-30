@@ -29,7 +29,7 @@
   box-shadow:
     0 8px 30px rgba(0, 0, 0, 0.10);
 
-  isolation: isolate;
+  /* isolation: isolate; */
 
   transition:
     background 0.3s ease,
@@ -1171,4 +1171,101 @@
   position: fixed;
 
   z-index: 1101 !important;
+}
+
+/* =========================================================
+   FINAL PRODUCTION NAVBAR GLASS FIX
+   Works on Vercel + Chrome + Safari/iPhone
+========================================================= */
+
+.navbar {
+  background: rgba(10, 10, 15, 0.42) !important;
+
+  backdrop-filter:
+    blur(22px)
+    saturate(140%) !important;
+
+  -webkit-backdrop-filter:
+    blur(22px)
+    saturate(140%) !important;
+
+  isolation: auto !important;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.08) !important;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   MOBILE NAVBAR
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    background: rgba(10, 10, 15, 0.42) !important;
+
+    backdrop-filter:
+      blur(22px)
+      saturate(150%) !important;
+
+    -webkit-backdrop-filter:
+      blur(22px)
+      saturate(150%) !important;
+
+    isolation: auto !important;
+
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+}
+
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+[data-theme="light"] .navbar {
+  background: rgba(255, 255, 255, 0.55) !important;
+
+  backdrop-filter:
+    blur(22px)
+    saturate(140%) !important;
+
+  -webkit-backdrop-filter:
+    blur(22px)
+    saturate(140%) !important;
+
+  isolation: auto !important;
+
+  border-bottom:
+    1px solid rgba(0, 0, 0, 0.08) !important;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   LIGHT THEME MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  [data-theme="light"] .navbar {
+    background: rgba(255, 255, 255, 0.55) !important;
+
+    backdrop-filter:
+      blur(22px)
+      saturate(150%) !important;
+
+    -webkit-backdrop-filter:
+      blur(22px)
+      saturate(150%) !important;
+
+    isolation: auto !important;
+  }
 }
