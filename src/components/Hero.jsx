@@ -43,13 +43,11 @@ function Hero() {
 
           <p className="hero-description">
             I design and build responsive, user-friendly web experiences using
-            React, JavaScript, and modern frontend tools to turn ideas into
-            practical, polished products that feel seamless, fast, and useful.
+            React and JavaScript to turn ideas into practical, polished products.
           </p>
 
           <p className="hero-mini-note">
-            Currently focused on frontend product work, UI systems, and
-            web apps that balance clarity, performance, and usability.
+            Focused on building clean, fast, and user-friendly web experiences.
           </p>
 
           {/* =====================================
