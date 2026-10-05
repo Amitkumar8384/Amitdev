@@ -37,14 +37,19 @@ function Hero() {
 
           {/* Heading */}
           <h1>
-            Frontend
-            <span> Developer</span>
+            React
+            <span> Frontend Developer</span>
           </h1>
 
-          {/* Description */}
           <p className="hero-description">
-            I build modern, responsive and user-focused web applications
-            using React, JavaScript and modern web technologies.
+            I design and build responsive, user-friendly web experiences using
+            React, JavaScript, and modern frontend tools to turn ideas into
+            practical, polished products that feel seamless, fast, and useful.
+          </p>
+
+          <p className="hero-mini-note">
+            Currently focused on frontend product work, UI systems, and
+            web apps that balance clarity, performance, and usability.
           </p>
 
           {/* =====================================

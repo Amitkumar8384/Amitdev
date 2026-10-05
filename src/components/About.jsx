@@ -60,10 +60,10 @@ function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            I'm a Frontend Developer focused on building modern,
-            responsive and user-focused web applications. I enjoy
-            turning ideas and designs into clean, functional and
-            accessible digital experiences.
+            I’m a Frontend Developer focused on building responsive,
+            accessible, and user-friendly web experiences. I enjoy turning
+            ideas into practical products with clean interfaces, solid UX, and
+            reliable frontend logic.
           </motion.p>
         </div>
 
@@ -82,16 +82,19 @@ function About() {
 
             <h3>
               Frontend development
-              <span> with a focus on details.</span>
+              <span> with a strong product mindset.</span>
             </h3>
 
             <p>
-              I work with JavaScript, React, Node.js, Express.js and MySQL to build practical,
-               responsive web applications.
+              I work with JavaScript, React, Node.js, Express.js, and MySQL to
+              build practical web applications that are responsive, maintainable,
+              and designed around real user needs.
             </p>
 
             <p>
-              I focus on clean code, API integration, responsive design and user-friendly experiences, with an emphasis on building applications that are reliable, maintainable and easy to use.
+              I focus on clean code, API integration, responsive design, and
+              thoughtful user experience so the final product feels smooth,
+              intuitive, and reliable across devices while staying easy to use.
             </p>
 
             <a

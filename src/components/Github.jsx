@@ -10,11 +10,14 @@ import {
   FiArrowUpRight,
 } from "react-icons/fi";
 const GITHUB_USERNAME = "Amitkumar8384";
+const DEFAULT_AVATAR = `https://github.com/${GITHUB_USERNAME}.png`;
 
 function Github() {
   const [github, setGithub] = useState(null);
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const githubAvatarUrl = github?.avatar_url || DEFAULT_AVATAR;
 
   useEffect(() => {
     const fetchGithubData = async () => {
@@ -111,10 +114,14 @@ function Github() {
 
           <div className="github-profile-card">
             <div className="github-avatar">
-              {github?.avatar_url ? (
+              {githubAvatarUrl ? (
                 <img
-                  src={github.avatar_url}
+                  src={githubAvatarUrl}
                   alt="GitHub profile"
+                  onError={(event) => {
+                    event.currentTarget.src = DEFAULT_AVATAR;
+                    event.currentTarget.onerror = null;
+                  }}
                 />
               ) : (
                 <FiGithub />

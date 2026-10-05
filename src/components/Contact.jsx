@@ -74,8 +74,10 @@ ${form.message}`;
             </h2>
 
             <p className="contact-description">
-              I'm open to frontend development opportunities, freelance
-              projects, and collaborations. Feel free to reach out.
+              I’m open to frontend development opportunities, freelance work,
+              and product collaborations. If you need a developer who cares about
+              UX, performance, and clean implementation, I’d love to build
+              something useful together.
             </p>
 
             <div className="contact-details">

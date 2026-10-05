@@ -56,7 +56,8 @@ function Education() {
           </h2>
 
           <p>
-            My academic background and educational journey.
+            My academic foundation and the learning path behind my frontend and
+            product-building journey.
           </p>
         </motion.div>
 

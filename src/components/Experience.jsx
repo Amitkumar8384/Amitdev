@@ -13,11 +13,11 @@ const experiences = [
     location: "New Delhi, India",
     role: "Digital Specialist",
     description:
-      "Worked with AI technology solutions, monitoring real-time dashboards and supporting AI/ML data quality and training workflows.",
+      "Worked in an AI-driven environment monitoring live systems, supporting data quality workflows, and helping improve model training inputs.",
     responsibilities: [
-      "Monitored real-time AI dashboards ensuring high event detection accuracy.",
-      "Filtered false detections and maintained data quality.",
-      "Performed image and video annotation for AI/ML training.",
+      "Monitored real-time AI dashboards to maintain event detection accuracy and operational quality.",
+      "Reviewed and filtered false detections to improve data quality and model reliability.",
+      "Performed image and video annotation work to support AI/ML training pipelines.",
     ],
     tags: [
       "AI Dashboards",
@@ -34,11 +34,11 @@ const experiences = [
     location: "Noida, India",
     role: "Web Developer",
     description:
-      "Worked on web development for an EdTech platform offering online learning and digital education services.",
+      "Worked on an EdTech platform focused on online learning, building responsive web interfaces and supporting frontend implementation for digital education experiences.",
     responsibilities: [
-      "Developed responsive web pages using HTML, CSS, and JavaScript.",
-      "Assisted in Angular frontend development.",
-      "Integrated APIs and used Git for version control.",
+      "Developed responsive web pages using HTML, CSS, and JavaScript for a learning-focused platform.",
+      "Supported Angular frontend development and UI implementation work.",
+      "Integrated APIs and used Git for version control and collaborative development.",
     ],
     tags: [
       "HTML",
@@ -74,9 +74,8 @@ function Experience() {
           </h2>
 
           <p>
-            A look at my professional experience and the work
-            I have contributed to across web development and
-            AI technology environments.
+            A look at the work I’ve contributed through web development,
+            frontend implementation, and AI-driven operational environments.
           </p>
         </motion.div>
 

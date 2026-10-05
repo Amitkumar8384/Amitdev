@@ -7,6 +7,8 @@ import {
   FiX,
 } from "react-icons/fi";
 
+const FALLBACK_PROJECT_IMAGE = "/projects/Portfolio.png";
+
 const projects = [
   {
     number: "01",
@@ -14,7 +16,7 @@ const projects = [
     title: "Expense Tracker",
     category: "Full-Stack",
     description:
-      "A full-stack personal finance management application for tracking income and expenses, managing budgets, recurring transactions, and viewing financial reports.",
+      "A full-stack finance dashboard built to help users manage budgets, recurring expenses, and multi-category transactions with secure authentication and clear reporting.",
     tech: [
       "React",
       "Vite",
@@ -45,7 +47,7 @@ const projects = [
     title: "FreshNut E-commerce",
     category: "E-commerce",
     description:
-      "A responsive e-commerce website with product listing and a shopping cart using Local Storage.",
+      "A responsive storefront experience for browsing products, managing cart items, and creating a smooth shopping flow with persistent local data.",
     tech: [
       "HTML5",
       "CSS3",
@@ -73,7 +75,7 @@ const projects = [
     title: "Weather App Pro",
     category: "API / Web App",
     description:
-      "A weather application that shows real-time weather information for any city using a public weather API.",
+      "A real-time weather dashboard that fetches live city data and presents it in a clean, easy-to-scan interface for quick decision-making.",
     tech: [
       "HTML5",
       "CSS3",
@@ -99,10 +101,10 @@ const projects = [
   {
     number: "04",
     slug: "todo-list",
-    title: "To-Do List Application",
+    title: "TaskFlow To-Do App",
     category: "Frontend",
     description:
-      "A task management application with CRUD operations, DOM event handling, and persistent data using Local Storage.",
+      "A clean task management app focused on quick add, update, and completion flows with persistent local storage for everyday productivity.",
     tech: [
       "HTML5",
       "CSS3",
@@ -115,40 +117,13 @@ const projects = [
     github: "#",
     caseStudy: {
       problem:
-        "Daily task tracking ke liye clean CRUD workflow chahiye tha with zero backend dependency.",
+        "Users needed a lightweight way to manage daily tasks without a backend or setup overhead.",
       approach:
-        "Event-driven DOM updates, input validation, and local storage sync use kiya for reliable persistence.",
+        "Built a focused CRUD interface with validation, status updates, and local storage persistence to keep the experience fast and simple.",
       impact:
-        "Fast prototype se productivity demo ready hua and JavaScript fundamentals strongly showcase hue.",
+        "The project demonstrates strong JavaScript fundamentals, user flow design, and practical frontend problem solving.",
       stack:
         "HTML5, CSS3, JavaScript, LocalStorage",
-    },
-  },
-
-  {
-    number: "05",
-    slug: "ai-dashboard",
-    title: "AI Dashboard Monitoring UI",
-    category: "Dashboard / UI",
-    description:
-      "A data-focused dashboard interface pattern inspired by real-time AI event monitoring workflows.",
-    tech: [
-      "JavaScript",
-      "Angular",
-      "Responsive UI",
-    ],
-    image: "/projects/ai-dashboard.png",
-    live: "#",
-    github: "#",
-    caseStudy: {
-      problem:
-        "High-volume monitoring context me operators ko quick visual prioritization ki need thi.",
-      approach:
-        "Alert-focused card hierarchy, responsive grid, and dashboard readability patterns apply kiye.",
-      impact:
-        "Complex data ko glanceable format me convert karke triage speed improve hui.",
-      stack:
-        "JavaScript, Angular Patterns, Responsive UI",
     },
   },
 ];
@@ -159,7 +134,6 @@ const filters = [
   "Full-Stack",
   "E-commerce",
   "API / Web App",
-  "Dashboard / UI",
 ];
 
 function Projects() {
@@ -227,9 +201,9 @@ function Projects() {
             </div>
 
             <p className="projects-intro">
-              A selection of projects where I build interfaces,
-              solve practical problems and experiment with modern
-              web technologies.
+              A few projects focused on building responsive interfaces,
+              solving real user problems, and creating useful digital
+              experiences with modern web tools.
             </p>
           </motion.div>
 
@@ -316,6 +290,10 @@ function Projects() {
                       src={project.image}
                       alt={`${project.title} project preview`}
                       loading="lazy"
+                      onError={(event) => {
+                        event.currentTarget.src = FALLBACK_PROJECT_IMAGE;
+                        event.currentTarget.onerror = null;
+                      }}
                     />
 
                     <div className="project-image-gradient" />
@@ -553,6 +531,10 @@ function Projects() {
                 <img
                   src={selectedProject.image}
                   alt={`${selectedProject.title} screenshot`}
+                  onError={(event) => {
+                    event.currentTarget.src = FALLBACK_PROJECT_IMAGE;
+                    event.currentTarget.onerror = null;
+                  }}
                 />
               </div>
 
